@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
+import hslogo from "../assets/hslogo.png"
 
 const Navbar = () => {
     const { user, logOut } = UserAuth()
@@ -15,11 +16,12 @@ const Navbar = () => {
     }
 
     return (
-        <div className="flex justify-between bg-gray-200 w-full p-4">
-            <h1 className="text-center text-2xl font-bold">
-                Headstarter - Calendar and Meetings
+        <div className="navContainer">
+            <h1 className="navBar">
+                <img src={hslogo} alt="Headstarter Logo" style={{ marginLeft: "20px", marginTop: "10px" }} />
+
             </h1>
-            {user?.displayName ? (<button onClick={handleSignOut}>Logout</button>) : (<Link to='/signin'>Sign in</Link>)}
+            {user?.displayName ? (<button className="navRightside" onClick={handleSignOut}>Logout</button>) : (<Link className="navRightside" to='/signin'>Sign in</Link>)}
 
 
         </div>

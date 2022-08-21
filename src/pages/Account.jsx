@@ -14,12 +14,10 @@ const Account = () => {
     }
 
     return (
-        <div className="w-[300px] m-auto">
-            <h1 className="text-center text-2xl font-bold pt-12">Calendar</h1>
-            <div>
-                <p>{user?.displayName}'s Meeting Calendar</p>
-            </div>
-            <button onClick={handleSignOut} className='border py-2 px-5 mt-10'>Logout</button>
+        <div className="googleDiv">
+            <h1 className="googleDiv">{user?.displayName}'s Meeting Calendar</h1>
+
+            {/* <button onClick={handleSignOut} className='googleDiv'>Logout</button> */}
         </div>
     );
 };

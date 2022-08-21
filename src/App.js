@@ -15,6 +15,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "./index.css";
 import "react-datepicker/dist/react-datepicker.css";
+import Contact from "./components/Contact";
 
 const locales = {
   "en-US": require("date-fns/locale"),
@@ -32,8 +33,8 @@ const events = [
   {
     title: "Meeting1",
     allDay: true,
-    start: new Date(2022, 7, 20, 18, 32),
-    end: new Date(2022, 7, 20, 18, 33),
+    start: new Date(2022, 7, 20),
+    end: new Date(2022, 7, 20),
   },
 
   {
@@ -72,12 +73,12 @@ function App() {
             element={
               <Protected>
                 <Account />
-                <h1>Calendar</h1>
-                <h2>Add New Event</h2>
+
+                <h3>Create Meeting</h3>
                 <div>
                   <input
                     type="text"
-                    placeholder="Add Title"
+                    placeholder="Meeting Title"
                     style={{ width: "20%", marginRight: "10px" }}
                     value={newEvent.title}
                     onChange={(e) =>
@@ -110,6 +111,7 @@ function App() {
                   endAccessor="end"
                   style={{ height: 500, margin: "50px" }}
                 />
+                <Contact />
               </Protected>
             }
           />
